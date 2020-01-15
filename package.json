@@ -1,0 +1,54 @@
+{
+  "name": "demo-jl-ext",
+  "version": "0.1.0",
+  "description": "demo extension",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension"
+  ],
+  "homepage": "https://github.com/ajbozarth/demo-jl-ext",
+  "bugs": {
+    "url": "https://github.com/ajbozarth/demo-jl-ext/issues"
+  },
+  "license": "Apache 2.0",
+  "author": "Alex Bozarth",
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "style": "style/index.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajbozarth/demo-jl-ext.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf lib node_modules yarn.lock tsconfig.tsbuildinfo",
+    "prepare": "jlpm run clean && jlpm run build",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^1.0.0",
+    "@jupyterlab/apputils": "^1.0.0",
+    "@jupyterlab/docregistry": "^1.0.0",
+    "@jupyterlab/fileeditor": "^1.0.0",
+    "@jupyterlab/notebook": "^1.0.0",
+    "@jupyterlab/outputarea": "^1.0.0",
+    "@jupyterlab/rendermime": "^1.0.0",
+    "@phosphor/disposable": "^1.1.2",
+    "@phosphor/widgets": "^1.8.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "typescript": "~3.5.2"
+  },
+  "sideEffects": [
+    "style/*.css"
+  ],
+  "jupyterlab": {
+    "extension": true
+  }
+}
